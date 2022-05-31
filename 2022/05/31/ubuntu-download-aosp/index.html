@@ -186,7 +186,7 @@
 
 <p>初始化仓库，为了避免无法翻墙下载google的repo，所以可以直接在后面通过–repo-url指定国内可以访问的repo文件地址</p>
 <p>如：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repo init -u https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest -b android-10.0.0_r47 </span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repo init -u https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest -b android-10.0.0_r47 --repo-url=https://gerrit-googlesource.lug.ustc.edu.cn/git-repo</span><br></pre></td></tr></table></figure>
 
 <p>-b 后面的分支名，可参考 <a target="_blank" rel="noopener" href="https://source.android.google.cn/source/build-numbers#source-code-tags-and-builds">分支列表</a></p>
 <h3 id="3-同步"><a href="#3-同步" class="headerlink" title="3. 同步"></a>3. 同步</h3><p>如果直接执行<code>repo sync</code> 下载代码会比较慢，如果只是纯下载代码本地编译调试，可以通过–no-tags不下载git tag加速下载，-j12表示允许12个线程同时下载。不过需可以注意不要超过CPU的最大线程数。</p>
