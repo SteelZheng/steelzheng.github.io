@@ -19,10 +19,10 @@
     <link rel="dns-prefetch" href="https://steelzheng.github.io">
     <!--SEO-->
 
-<meta name="keywords" content="" />
+<meta name="keywords" content="android,aosp" />
 
 
-<meta name="description" content="" />
+<meta name="description" content="1. 下载repo工具1234mkdir ~/binPATH=~/bin:$PATHcurl https://storage.googleapis.com/git-repo-downloads/..." />
 
 
 <meta name="robots" content="all" />
@@ -32,6 +32,8 @@
     <!--Title-->
 
 <title>
+    
+    ubuntu下载aosp源码 |
     
     Hexo
 </title>
@@ -134,41 +136,16 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    
-<div class="carousel">
-    <a href="https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=xs0pypd2" target="_blank">
-        <img src="/./img/head-img.jpg" alt="">
-    </a>
-</div>
-
-
-
-
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
 <article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2022/05/31/ubuntu-download-aosp/">
-                    ubuntu下载aosp源码</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2022年05月31日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
+    <div class="post-head">
+        <h1 id="ubuntu下载aosp源码">
             
-            1. 下载repo工具1234mkdir ~/binPATH=~/bin:$PATHcurl https://storage.googleapis.com/git-repo-downloads/repo &amp;gt; ~/bin/repo...
+            ubuntu下载aosp源码
             
-        </p>
-    </div>
-    
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
+        </h1>
+        <div class="post-meta">
     
     <span class="categories-meta fa-wrap">
         <i class="fa fa-folder-open-o"></i>
@@ -186,195 +163,80 @@
     </span>
     
     
-</div>
-        </div>
-        <div class="post-permalink">
-            <a href="/2022/05/31/ubuntu-download-aosp/" class="btn btn-default">
-                阅读全文</a>
-        </div>
-    </footer>
-    
-</article>
-
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2022/03/27/hello-world/">
-                    如何使用hexo</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2022年03月27日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using ...
-            
-        </p>
-    </div>
-    
-    <footer class="post-footer clearfix">
-        <div class="pull-left tag-list">
-            <div class="post-meta">
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        
-    </span>
-    
     
     <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-        </span>
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2022/05/31</span>
     </span>
     
     
 </div>
-        </div>
-        <div class="post-permalink">
-            <a href="/2022/03/27/hello-world/" class="btn btn-default">
-                阅读全文</a>
-        </div>
-    </footer>
+        
+        
+    </div>
     
+    <div class="post-body post-content">
+        <h3 id="1-下载repo工具"><a href="#1-下载repo工具" class="headerlink" title="1. 下载repo工具"></a>1. 下载repo工具</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/bin</span><br><span class="line">PATH=~/bin:$PATH</span><br><span class="line">curl https://storage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo</span><br><span class="line">chmod a+x ~/bin/repo</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-初始化repo"><a href="#2-初始化repo" class="headerlink" title="2. 初始化repo"></a>2. 初始化repo</h3><p>新建工作仓</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir aosp</span><br><span class="line">cd aosp</span><br></pre></td></tr></table></figure>
+
+<p>初始化仓库，为了避免无法翻墙下载google的repo，所以可以直接在后面通过–repo-url指定国内可以访问的repo文件地址</p>
+<p>如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repo init -u https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest -b android-10.0.0_r47 </span><br></pre></td></tr></table></figure>
+
+<p>-b 后面的分支名，可参考 <a target="_blank" rel="noopener" href="https://source.android.google.cn/source/build-numbers#source-code-tags-and-builds">分支列表</a></p>
+<h3 id="3-同步"><a href="#3-同步" class="headerlink" title="3. 同步"></a>3. 同步</h3><p>如果直接执行<code>repo sync</code> 下载代码会比较慢，如果只是纯下载代码本地编译调试，可以通过–no-tags不下载git tag加速下载，-j12表示允许12个线程同时下载。不过需可以注意不要超过CPU的最大线程数。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repo sync --no-tags -j12</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="http://steelzheng.com" target="_blank">http://steelzheng.com</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
 </article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+    <a href="/2022/03/27/hello-world/" class="next-post btn btn-default" title='如何使用hexo'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            如何使用hexo</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
 
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
 
+</div>
 
                 </main>
                 
-                    
-<aside class="col-md-4 sidebar">
-    
-    
-<div class="widget">
-    <h3 class="title">
-        搜索
-    </h3>
-    <div id="search-form">
-        <div id="result-mask" class="hide"></div>
-        <div class="search-area">
-            
-            <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢？">
-            <button type="button" class="search-form-submit" id="search-local">
-                站内搜索</button>
-            
-            
-        </div>
-        <div id="result-wrap" class="hide">
-            <div id="search-result"></div>
-        </div>
-        <div class="hide">
-            <template id="search-tpl">
-                <div class="item">
-                    <a href="/{path}" title="{title}">
-                        <div class="title">{title}</div>
-                        <div class="content">{content}</div>
-                    </a>
-                </div>
-            </template>
-        </div>
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        网站公告
-    </h3>
-    <div class="notification">
-        <p>
-    主题下载：<a href="https://github.com/shenliyang/hexo-theme-snippet" title="fork me" target="_blank">Snippet主题</a> <br/>
-    主题使用：<a href="https://github.com/shenliyang/hexo-theme-snippet/blob/master/README.md#常见问题" title="" target="_blank">常见使用问题</a> <br/>
-    支持主题：<a target="_blank" rel="noopener" href="https://github.com/shenliyang/hexo-theme-snippet/stargazers">Star一下</a>
-</p>
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        社交
-    </h3>
-    <div class="content social">
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            文章目录
+        </h3>
         
-        <a href="//github.com/steelzheng" rel="external nofollow" title="Github" target="_blank">
-            <i class="git fa fa-git"></i>
-        </a>
-        
-        <a href="mailto:steelzheng@foxmail.com" rel="external nofollow" title="邮箱" target="_blank">
-            <i class="envelope-o fa fa-envelope-o"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
-            <i class="qq fa fa-qq"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="微信" target="_blank">
-            <i class="weixin fa fa-weixin"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="QQ群" target="_blank">
-            <i class="users fa fa-users"></i>
-        </a>
-        
-        <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
-            <i class="feed fa fa-feed"></i>
-        </a>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BDrepo%E5%B7%A5%E5%85%B7"><span class="toc-text">1. 下载repo工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%9D%E5%A7%8B%E5%8C%96repo"><span class="toc-text">2. 初始化repo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%8C%E6%AD%A5"><span class="toc-text">3. 同步</span></a></li></ol>
         
     </div>
-</div>
-
-    
-    
-    
-    
-<div class="widget">
-    <h3 class="title">
-        归档
-    </h3>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/"><i class="fa" aria-hidden="true">2022年05月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/"><i class="fa" aria-hidden="true">2022年03月</i></a><span class="archive-list-count">1</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        标签云
-    </h3>
-    <div class="content tag-cloud">
-        
-        <a href="/tags/android-aosp/" style="font-size: 10px;">android,aosp</a>
-        
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        友链
-    </h3>
-    <div class="content friends-link">
-        
-        <a href="https://hexo.io/zh-cn/" class="fa" target="_blank">
-            Hexo官网</a>
-        
-    </div>
-</div>
-
-    
 </aside>
-
                 
             </div>
         </div>
@@ -411,10 +273,6 @@
         </div>
     </div>
 </div>
-
-
-<script src="/js/search.js?rev=@@hash.js"></script>
-
 
 
 
