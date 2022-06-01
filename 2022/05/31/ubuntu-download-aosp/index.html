@@ -193,6 +193,56 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">repo sync --no-tags -j12</span><br></pre></td></tr></table></figure>
 
 
+
+<h3 id="4-编译"><a href="#4-编译" class="headerlink" title="4. 编译"></a>4. 编译</h3><p>先初始化环境</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source build/envsetup.sh</span><br></pre></td></tr></table></figure>
+
+
+<p>选择编译类型</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lunch</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">You&#x27;re building on Linux</span><br><span class="line"></span><br><span class="line">Lunch menu... pick a combo:</span><br><span class="line">     1. aosp_arm-eng</span><br><span class="line">     2. aosp_arm64-eng</span><br><span class="line">     3. aosp_blueline-userdebug</span><br><span class="line">     4. aosp_bonito-userdebug</span><br><span class="line">     5. aosp_car_arm-userdebug</span><br><span class="line">     6. aosp_car_arm64-userdebug</span><br><span class="line">     7. aosp_car_x86-userdebug</span><br><span class="line">     8. aosp_car_x86_64-userdebug</span><br><span class="line">     9. aosp_cf_arm64_phone-userdebug</span><br><span class="line">     10. aosp_cf_x86_64_phone-userdebug</span><br><span class="line">     11. aosp_cf_x86_auto-userdebug</span><br><span class="line">     12. aosp_cf_x86_phone-userdebug</span><br><span class="line">     13. aosp_cf_x86_tv-userdebug</span><br><span class="line">     14. aosp_crosshatch-userdebug</span><br><span class="line">     15. aosp_marlin-userdebug</span><br><span class="line">     16. aosp_sailfish-userdebug</span><br><span class="line">     17. aosp_sargo-userdebug</span><br><span class="line">     18. aosp_taimen-userdebug</span><br><span class="line">     19. aosp_walleye-userdebug</span><br><span class="line">     20. aosp_walleye_test-userdebug</span><br><span class="line">     21. aosp_x86-eng</span><br><span class="line">     22. aosp_x86_64-eng</span><br><span class="line">     23. beagle_x15-userdebug</span><br><span class="line">     24. fuchsia_arm64-eng</span><br><span class="line">     25. fuchsia_x86_64-eng</span><br><span class="line">     26. hikey-userdebug</span><br><span class="line">     27. hikey64_only-userdebug</span><br><span class="line">     28. hikey960-userdebug</span><br><span class="line">     29. hikey960_tv-userdebug</span><br><span class="line">     30. hikey_tv-userdebug</span><br><span class="line">     31. m_e_arm-userdebug</span><br><span class="line">     32. mini_emulator_arm64-userdebug</span><br><span class="line">     33. mini_emulator_x86-userdebug</span><br><span class="line">     34. mini_emulator_x86_64-userdebug</span><br><span class="line">     35. poplar-eng</span><br><span class="line">     36. poplar-user</span><br><span class="line">     37. poplar-userdebug</span><br><span class="line">     38. qemu_trusty_arm64-userdebug</span><br><span class="line">     39. uml-userdebug</span><br><span class="line"></span><br><span class="line">Which would you like? [aosp_arm-eng]   22</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">============================================</span><br><span class="line">PLATFORM_VERSION_CODENAME=REL</span><br><span class="line">PLATFORM_VERSION=10</span><br><span class="line">TARGET_PRODUCT=aosp_x86_64</span><br><span class="line">TARGET_BUILD_VARIANT=eng</span><br><span class="line">TARGET_BUILD_TYPE=release</span><br><span class="line">TARGET_ARCH=x86_64</span><br><span class="line">TARGET_ARCH_VARIANT=x86_64</span><br><span class="line">TARGET_2ND_ARCH=x86</span><br><span class="line">TARGET_2ND_ARCH_VARIANT=x86_64</span><br><span class="line">HOST_ARCH=x86_64</span><br><span class="line">HOST_2ND_ARCH=x86</span><br><span class="line">HOST_OS=linux</span><br><span class="line">HOST_OS_EXTRA=Linux-5.10.102.1-microsoft-standard-WSL2-x86_64-Ubuntu-20.04.4-LTS</span><br><span class="line">HOST_CROSS_OS=windows</span><br><span class="line">HOST_CROSS_ARCH=x86</span><br><span class="line">HOST_CROSS_2ND_ARCH=x86_64</span><br><span class="line">HOST_BUILD_TYPE=release</span><br><span class="line">BUILD_ID=QP1A.190711.019</span><br><span class="line">OUT_DIR=out</span><br><span class="line">============================================</span><br></pre></td></tr></table></figure>
+
+<p>开始编译：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j4</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果遇到Java OutOfMemoryError ，需要把环境变量将堆大小设置为4 GB </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo vim ~/.bashrc</span><br><span class="line"></span><br><span class="line">在最后一行写入：export _JAVA_OPTIONS=&quot;-Xmx4g&quot;</span><br><span class="line">保存退出</span><br></pre></td></tr></table></figure>
+
+<p>另外，本人是在Windows 的linux子系统上进行的编译</p>
+<p>因此还需要对 mem和swap、线程数进行设置</p>
+<p>保存路径：C:\Users\用户名\.wslconfig</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[wsl2]</span><br><span class="line">memory=10G</span><br><span class="line">processors=5</span><br><span class="line">swap=20G</span><br><span class="line">localhostForwarding=true</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="5-运行编译号的模拟器"><a href="#5-运行编译号的模拟器" class="headerlink" title="5. 运行编译号的模拟器"></a>5. 运行编译号的模拟器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">emulator</span><br></pre></td></tr></table></figure>
+
+<p>如果遇到如下错误：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">emulator: ERROR: x86 emulation currently requires hardware acceleration!</span><br><span class="line">Please ensure KVM is properly installed and usable.</span><br><span class="line">CPU acceleration status: KVM is not installed on this machine (/dev/kvm is missing).</span><br></pre></td></tr></table></figure>
+
+<p>需要执行如下操作：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install qemu-kvm cpu-checker</span><br><span class="line"></span><br><span class="line">查看系统 KVM 是否可用</span><br><span class="line">kvm-ok</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">  INFO: /dev/kvm exists</span><br><span class="line">  KVM acceleration can be used</span><br><span class="line"></span><br><span class="line">创建 kvm 用户组并把当前登录用户（如 king ）添加到 kvm 用户组</span><br><span class="line">sudo addgroup kvm</span><br><span class="line">sudo usermod -a -G kvm king</span><br><span class="line"></span><br><span class="line">改变 /dev/kvm 用户组为 kvm</span><br><span class="line">sudo chgrp kvm /dev/kvm</span><br><span class="line"></span><br><span class="line">sudo chown 登陆用户 -R /dev/kvm</span><br></pre></td></tr></table></figure>
+
+
+
+<p>如果有遇到：QObject: Timer 报错的问题</p>
+<p>可以使用：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">emulator -use-system-libs</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>最后即可启动模拟器</p>
+
     </div>
     
     <div class="post-footer">
@@ -233,7 +283,7 @@
             文章目录
         </h3>
         
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BDrepo%E5%B7%A5%E5%85%B7"><span class="toc-text">1. 下载repo工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%9D%E5%A7%8B%E5%8C%96repo"><span class="toc-text">2. 初始化repo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%8C%E6%AD%A5"><span class="toc-text">3. 同步</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8B%E8%BD%BDrepo%E5%B7%A5%E5%85%B7"><span class="toc-text">1. 下载repo工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%88%9D%E5%A7%8B%E5%8C%96repo"><span class="toc-text">2. 初始化repo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%90%8C%E6%AD%A5"><span class="toc-text">3. 同步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%BC%96%E8%AF%91"><span class="toc-text">4. 编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%BF%90%E8%A1%8C%E7%BC%96%E8%AF%91%E5%8F%B7%E7%9A%84%E6%A8%A1%E6%8B%9F%E5%99%A8"><span class="toc-text">5. 运行编译号的模拟器</span></a></li></ol>
         
     </div>
 </aside>
